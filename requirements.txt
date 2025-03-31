@@ -1,2 +1,6 @@
 ipykernel
 python-dotenv
+pandas
+pybaseball
+datetime
+python-dateutil
