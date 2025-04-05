@@ -137,5 +137,14 @@ coltype = {
 
 data.to_sql("pitches", conn, if_exists="replace", index=False, dtype=coltype)
 
+
+cursor = conn.cursor()
+
+cursor.execute("CREATE INDEX IF NOT EXISTS idx1 ON pitches(game_date)")
+cursor.execute("CREATE INDEX IF NOT EXISTS idx2 ON pitches(pitch_type)")
+
+conn.commit()
+
+
 # Close the connection
 conn.close()
